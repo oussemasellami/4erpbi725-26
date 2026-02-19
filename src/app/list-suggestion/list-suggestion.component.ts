@@ -7,6 +7,7 @@ import { Suggestion } from '../models/suggestion';
   styleUrl: './list-suggestion.component.css',
 })
 export class ListSuggestionComponent {
+   listfav: Suggestion[] = []
   suggestions: Suggestion[] = [
     {
       id: 1,
@@ -54,4 +55,19 @@ export class ListSuggestionComponent {
     s.nbLikes++
 
   }
+search=''
+  ajouter(s:Suggestion){
+
+    if(!this.listfav.includes(s)){
+      this.listfav.push(s)
+console.log(this.listfav)
+    }
+
+  }
+
+searchbytitle(){
+  return this.suggestions.filter(
+    s=>s.title.toLowerCase().includes(this.search.toLowerCase()))
+}
+
 }

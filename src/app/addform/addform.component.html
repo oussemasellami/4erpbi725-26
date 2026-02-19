@@ -1,0 +1,59 @@
+<p>addform works!</p>
+<form [formGroup]="suggForm">
+
+ 
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
+  </div>
+  <input type="text" formControlName="title" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+</div>
+<div class="alert alert-danger">
+
+</div>
+<br>
+<br>
+
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Description:</span>
+  </div>
+  <textarea class="form-control" formControlName="description" aria-label="With textarea"></textarea>
+</div>
+<div class="alert alert-danger">
+
+</div>
+<br>
+<br>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">Categorie:</label>
+  </div>
+
+  <select formControlName="categorie" class="custom-select" id="inputGroupSelect01">
+    <option selected>Choose...</option>
+    <option *ngFor="let c of categorie" value="{{c}}">{{c}}</option>
+  
+  </select>
+
+</div>
+<br>
+<br>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-default">Status</span>
+  </div>
+  <input type="text" formControlName="status" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+</div>
+<div class="alert alert-danger">
+
+</div>
+
+
+
+
+    <button class="btn btn-primary" (click)="add()">
+        save
+    </button>
+
+</form>
